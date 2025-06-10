@@ -9,8 +9,7 @@ RUN useradd -m pygopherduser
 WORKDIR /app
 
 COPY setup.py ./
-RUN pip install --no-cache-dir --upgrade pip && \
-    if [ -f setup.py ]; then pip install .; fi
+RUN pip install .
 
 COPY . .
 
