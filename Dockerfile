@@ -8,7 +8,7 @@ RUN useradd -m pygopherduser
 
 WORKDIR /app
 
-COPY requirements.txt setup.py pyproject.toml ./
+COPY requirements.txt setup.py ./
 RUN pip install --no-cache-dir --upgrade pip && \
     if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi && \
     if [ -f setup.py ]; then pip install .; fi
