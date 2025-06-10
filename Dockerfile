@@ -9,7 +9,7 @@ RUN useradd -m pygopherduser
 WORKDIR /app
 
 COPY setup.py ./
-RUN pip install .
+RUN python3 -m pip install .
 
 COPY . .
 
