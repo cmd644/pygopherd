@@ -18,4 +18,4 @@ USER pygopherduser
 
 EXPOSE 70
 
-CMD ["pygopherd", "--config", "/app/pygopherd.conf"]
+CMD ["pygopherd", "/app/pygopherd.conf"]
