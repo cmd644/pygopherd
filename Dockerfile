@@ -8,10 +8,9 @@ RUN useradd -m pygopherduser
 
 WORKDIR /app
 
-COPY setup.py ./
-RUN python3 -m pip install .
-
 COPY . .
+
+RUN python3 -m pip install .
 
 RUN chown -R pygopherduser:pygopherduser /app
 
