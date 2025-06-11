@@ -16,11 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up dependencies for DocBook toolchain
+      - name: Install dependencies for DocBook toolchain
         run: |
           sudo apt-get update
           sudo apt-get install -y docbook-utils docbook-xml docbook-xsl xsltproc dblatex groff ghostscript sgml-data
-          # Ensure ISO entities are linked
+          # Ensure valid catalog setup
           if [ ! -L /etc/sgml/catalog ]; then
             sudo ln -s /usr/share/sgml/docbook/xml-dtd-4.5/catalog /etc/sgml/catalog
           else
@@ -29,11 +29,12 @@ jobs:
 
       - name: Debug ISO Entities
         run: |
-          # Verify and print contents of ISOamsr.ent
+          # Print contents of ISOamsr.ent for debugging
           cat /usr/share/xml/entities/xml-iso-entities-8879.1986/ISOamsr.ent || exit 1
 
-      - name: Build documentation using Makefile with verbose debugging
+      - name: Attempt build using xsltproc instead of openjade
         run: |
+          xsltproc --output doc/pygopherd.html doc/book.xml || echo "Fallback to openjade"
           make --debug=v docs || exit 1
 
       - name: Commit and push updated documentation
