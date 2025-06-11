@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies for DocBook toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y docbook-utils docbook-xml docbook-xsl xsltproc dblatex groff ghostscript sgml-data
+          sudo apt-get install -y docbook-utils docbook-xml docbook-xsl xsltproc sgml-data
           # Ensure valid catalog setup
           if [ ! -L /etc/sgml/catalog ]; then
             sudo ln -s /usr/share/sgml/docbook/xml-dtd-4.5/catalog /etc/sgml/catalog
@@ -27,24 +27,29 @@ jobs:
             echo "/etc/sgml/catalog already exists, skipping symbolic link creation."
           fi
 
-      - name: Debug ISO Entities
+      - name: Verify required files
         run: |
-          # Print contents of ISOamsr.ent for debugging
-          cat /usr/share/xml/entities/xml-iso-entities-8879.1986/ISOamsr.ent || exit 1
+          # Check for critical files
+          if [ ! -f doc/book.xml ]; then
+            echo "Missing required file: doc/book.xml"; exit 1;
+          fi
 
-      - name: Attempt build using xsltproc instead of openjade
+      - name: Build HTML documentation
         run: |
-          xsltproc --output doc/pygopherd.html doc/book.xml || echo "Fallback to openjade"
-          make --debug=v docs || exit 1
+          xsltproc --output doc/pygopherd.html doc/book.xml || exit 1
+
+      - name: Build MAN pages
+        run: |
+          make man || exit 1
 
       - name: Commit and push updated documentation
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add doc/*.html doc/*.txt doc/*.pdf doc/*.1 doc/*.8 doc/*.ps || true
+          git add doc/*.html doc/*.1 doc/*.8 || true
           if git diff --cached --quiet; then
             echo "No documentation changes to commit."
           else
-            git commit -m "Auto-update DocBook documentation [CI]"
+            git commit -m "Auto-update HTML and MAN pages documentation [CI]"
             git push
           fi
