@@ -20,9 +20,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y docbook-utils docbook-xml docbook-xsl xsltproc dblatex groff ghostscript openjade sgml-data
-          # Ensure ISO entities are properly installed
-          sudo apt-get install -y xml-core
-          sudo update-xml-catalog
+          # Removed update-xml-catalog as it caused the error
+          # Ensure ISO entities are properly linked
+          sudo ln -s /usr/share/sgml/docbook/xml-dtd-4.5/catalog /etc/sgml/catalog
 
       - name: Debug ISO Entities
         run: |
