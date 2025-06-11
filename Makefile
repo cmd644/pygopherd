@@ -13,6 +13,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
 clean:
 	-python2.3 setup.py clean --all
 	-rm -f `find . -name "*~"`
@@ -31,11 +32,22 @@ changelog:
 docs: doc/pygopherd.8 doc/pygopherd.ps \
 	doc/pygopherd.pdf doc/pygopherd.txt doc/pygopherd.html
 
+#doc/pygopherd.8: doc/pygopherd.sgml doc/book.sgml
+#	docbook2man doc/book.sgml
+#	docbook2man doc/book.sgml
+#	-rm manpage.links manpage.refs
+#	mv pygopherd.8 doc
+
 doc/pygopherd.8: doc/pygopherd.sgml doc/book.sgml
 	docbook2man doc/book.sgml
-	docbook2man doc/book.sgml
-	-rm manpage.links manpage.refs
-	mv pygopherd.8 doc
+	-rm -f manpage.links manpage.refs
+	if [ -f pygopherd.8 ]; then \
+		mv pygopherd.8 doc/pygopherd.8; \
+	elif [ -f book.8 ]; then \
+		mv book.8 doc/pygopherd.8; \
+	else \
+		echo "No manpage produced!"; exit 1; \
+	fi
 
 #doc/pygopherd.html: doc/pygopherd.sgml
 #	docbook2html -u doc/pygopherd.sgml
