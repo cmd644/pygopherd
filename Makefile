@@ -41,6 +41,7 @@ docs: doc/pygopherd.8 doc/pygopherd.ps \
 doc/pygopherd.8: doc/pygopherd.sgml doc/book.sgml
 	docbook2man doc/book.sgml
 	-rm -f manpage.links manpage.refs
+	mkdir -p doc
 	outfile=$$(ls *.8 | head -n1); \
 	if [ -n "$$outfile" ]; then \
 		mv "$$outfile" doc/pygopherd.8; \
