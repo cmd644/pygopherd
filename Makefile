@@ -39,7 +39,8 @@ docs: doc/pygopherd.8 doc/pygopherd.ps \
 #	mv pygopherd.8 doc
 
 doc/pygopherd.8: doc/pygopherd.sgml doc/book.sgml
-	cd doc && docbook2man book.sgml
+	mkdir -p doc
+	cd doc && docbook2man ../book.sgml
 	cd doc && rm -f manpage.links manpage.refs
 	cd doc && if [ -f pygopherd.8 ]; then \
 		: ; \
@@ -53,21 +54,50 @@ doc/pygopherd.8: doc/pygopherd.sgml doc/book.sgml
 #	docbook2html -u doc/pygopherd.sgml
 #	mv pygopherd.html doc
 
+#doc/pygopherd.html: doc/pygopherd.sgml doc/book.sgml
+#	docbook2html -u doc/book.sgml
+#	mv book.html doc/pygopherd.html
+
 doc/pygopherd.html: doc/pygopherd.sgml doc/book.sgml
-	docbook2html -u doc/book.sgml
-	mv book.html doc/pygopherd.html
+	mkdir -p doc
+	cd doc && docbook2html -u ../book.sgml
+	cd doc && if [ -f pygopherd.html ]; then \
+		: ; \
+	elif [ -f book.html ]; then \
+		mv book.html pygopherd.html; \
+	else \
+		echo "No HTML doc produced!"; exit 1; \
+	fi
 
 #doc/pygopherd.ps: doc/pygopherd.8
 #	man -t -l doc/pygopherd.8 > doc/pygopherd.ps
 
+#doc/pygopherd.ps: doc/pygopherd.sgml doc/book.sgml doc/manpage.sgml
+#	docbook2ps \
+#		doc/book.sgml
+#	mv book.ps doc/pygopherd.ps
+
 doc/pygopherd.ps: doc/pygopherd.sgml doc/book.sgml doc/manpage.sgml
-	docbook2ps \
-		doc/book.sgml
-	mv book.ps doc/pygopherd.ps
+	mkdir -p doc
+	cd doc && docbook2ps ../book.sgml
+	cd doc && if [ -f book.ps ]; then \
+		mv book.ps pygopherd.ps; \
+	else \
+		echo "No PS doc produced!"; exit 1; \
+	fi
+
+#doc/pygopherd.pdf: doc/pygopherd.ps
+#	ps2pdf doc/pygopherd.ps
+#	mv pygopherd.pdf doc
 
 doc/pygopherd.pdf: doc/pygopherd.ps
-	ps2pdf doc/pygopherd.ps
-	mv pygopherd.pdf doc
+	mkdir -p doc
+	cd doc && ps2pdf pygopherd.ps
+	cd doc && if [ -f pygopherd.pdf ]; then :; else echo "No PDF produced!"; exit 1; fi
 
-doc/pygopherd.txt:
-	groff -Tascii -man doc/pygopherd.8 | sed $$'s/.\b//g' > doc/pygopherd.txt
+#doc/pygopherd.txt:
+#	groff -Tascii -man doc/pygopherd.8 | sed $$'s/.\b//g' > doc/pygopherd.txt
+
+doc/pygopherd.txt: doc/pygopherd.8
+	mkdir -p doc
+	cd doc && groff -Tascii -man pygopherd.8 | sed $$'s/.\b//g' > pygopherd.txt
