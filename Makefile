@@ -39,12 +39,12 @@ docs: doc/pygopherd.8 doc/pygopherd.ps \
 #	mv pygopherd.8 doc
 
 doc/pygopherd.8: doc/pygopherd.sgml doc/book.sgml
-	docbook2man doc/book.sgml
-	-rm -f manpage.links manpage.refs
-	mkdir -p doc
-	outfile=$$(ls *.8 | head -n1); \
-	if [ -n "$$outfile" ]; then \
-		mv "$$outfile" doc/pygopherd.8; \
+	cd doc && docbook2man book.sgml
+	cd doc && rm -f manpage.links manpage.refs
+	cd doc && if [ -f pygopherd.8 ]; then \
+		: ; \
+	elif [ -f book.8 ]; then \
+		mv book.8 pygopherd.8; \
 	else \
 		echo "No manpage produced!"; exit 1; \
 	fi
