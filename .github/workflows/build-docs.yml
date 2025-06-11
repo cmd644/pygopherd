@@ -19,7 +19,7 @@ jobs:
       - name: Set up dependencies for DocBook toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y docbook-utils docbook-xml docbook-xsl xsltproc dblatex groff ghostscript openjade sgml-data
+          sudo apt-get install -y docbook-utils docbook-xml docbook-xsl xsltproc dblatex groff ghostscript sgml-data
           # Ensure ISO entities are properly linked only if necessary
           if [ ! -L /etc/sgml/catalog ]; then
             sudo ln -s /usr/share/sgml/docbook/xml-dtd-4.5/catalog /etc/sgml/catalog
@@ -29,11 +29,12 @@ jobs:
 
       - name: Debug ISO Entities
         run: |
-          # Verify that ISOamsr.ent is accessible
-          ls /usr/share/xml/entities/xml-iso-entities-8879.1986/ISOamsr.ent || exit 1
+          # Verify that ISOamsr.ent is accessible and readable
+          cat /usr/share/xml/entities/xml-iso-entities-8879.1986/ISOamsr.ent || exit 1
 
       - name: Build documentation using Makefile
-        run: make docs
+        run: |
+          make docs || make --debug=v docs
 
       - name: Commit and push updated documentation
         run: |
