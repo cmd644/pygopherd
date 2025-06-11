@@ -20,7 +20,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y docbook-utils docbook-xml docbook-xsl xsltproc dblatex groff ghostscript sgml-data
-          # Ensure ISO entities are properly linked only if necessary
+          # Ensure ISO entities are linked
           if [ ! -L /etc/sgml/catalog ]; then
             sudo ln -s /usr/share/sgml/docbook/xml-dtd-4.5/catalog /etc/sgml/catalog
           else
@@ -29,12 +29,12 @@ jobs:
 
       - name: Debug ISO Entities
         run: |
-          # Verify that ISOamsr.ent is accessible and readable
+          # Verify and print contents of ISOamsr.ent
           cat /usr/share/xml/entities/xml-iso-entities-8879.1986/ISOamsr.ent || exit 1
 
-      - name: Build documentation using Makefile
+      - name: Build documentation using Makefile with verbose debugging
         run: |
-          make docs || make --debug=v docs
+          make --debug=v docs || exit 1
 
       - name: Commit and push updated documentation
         run: |
