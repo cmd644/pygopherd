@@ -1,9 +1,10 @@
 [![Build](https://github.com/michael-lazar/pygopherd/workflows/Test/badge.svg)](https://github.com/michael-lazar/pygopherd/actions)
 [![license GPLv2](https://img.shields.io/github/license/michael-lazar/pygopherd)](https://www.gnu.org/licenses/gpl-2.0.en.html)
+[![Build and Push Docker Image](https://github.com/cmd644/pygopherd/actions/workflows/docker-image.yml/badge.svg)](https://github.com/cmd644/pygopherd/actions/workflows/docker-image.yml)
 
 # PyGopherd
 
-PyGopherd is a multiprotocol (gopher, gopher+, http, wap) information server.
+PyGopherd is a multiprotocol (gopher, gopher+, http, wap) information server. Now with Docker container support for easier setup!
 
 [PyGopherd Online User Manual](https://michael-lazar.github.io/pygopherd/doc/pygopherd.html)
 
