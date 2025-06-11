@@ -20,131 +20,150 @@
     </para>
     
     <itemizedlist>
-      <listitem><para>Provides built-in support for multiple protocols:
-	  HTTP (Web), Gopher+, Gopher (RFC1436), Enhanced Gopher0,
-	  Gemini, Spartan, and WAP (mobile phones).  Protocols can be enabled or
-	  disabled as desired.
-	</para>
+      <listitem>
+        <para>Provides built-in support for multiple protocols:
+        HTTP (Web), Gopher+, Gopher (RFC1436), Enhanced Gopher0,
+        Gemini, Spartan, and WAP (mobile phones).  Protocols can be enabled or
+        disabled as desired.
+        </para>
       </listitem>
       
-      <listitem><para>Provides protocol autodetection.  That is,
-	  &PyGopherd; can listen for all the above protocols
-	  <emphasis>on a single port</emphasis> and will
-	  automatically respond using the protocol it detects the
-	  client is using.  Practical effects of this are that you
-	  can, for instance, give out a single URL and have it
-	  viewable normally on desktop Web browsers and in WAP
-	  mode on mobile phones -- and appropriately in various
-	  Gopher browsers.
-	</para>
+      <listitem>
+        <para>Provides protocol autodetection.  That is,
+        &PyGopherd; can listen for all the above protocols
+        <emphasis>on a single port</emphasis> and will
+        automatically respond using the protocol it detects the
+        client is using.  Practical effects of this are that you
+        can, for instance, give out a single URL and have it
+        viewable normally on desktop Web browsers and in WAP
+        mode on mobile phones -- and appropriately in various
+        Gopher browsers.
+        </para>
       </listitem>
       
-      <listitem><para>Metadata and site links can be entered in a
-	  variety of formats, including full UMN dotfile metadata
-	  formats as well as Bucktooth gophermap files.  Moreover,
-	  gophermap files are not limited to Gopher protocols, and
-	  can be used for all protocols.
-	</para>
+      <listitem>
+        <para>Metadata and site links can be entered in a
+        variety of formats, including full UMN dotfile metadata
+        formats as well as Bucktooth gophermap files.  Moreover,
+        gophermap files are not limited to Gopher protocols, and
+        can be used for all protocols.
+        </para>
       </listitem>
       
-      <listitem><para>Support for inter-protocol linking (linking
-	  from Gopher sites to web sites)</para>
+      <listitem>
+        <para>Support for inter-protocol linking (linking
+        from Gopher sites to web sites)</para>
       </listitem>
 
-      <listitem><para>Virtual folder system lets you serve up
-	  anything as if it were regular files and directories.
-	  PyGopherd comes with the following virtual folder systems
-	  built in:</para>
-	<itemizedlist>
-	  <listitem><para>Can present any Unix MBOX, MMDF box, MH
-	      directory, Maildir directory, or Babyl mailbox as a
-	      virtual folder, the contents of which are the
-	      messages in the mailbox.
-	    </para>
-	  </listitem>
-	  <listitem><para>Can use a configurable separator to
-	      split a file into multiple parts, the first line of each
-	      becoming the name for the virtual folder.</para>
-	  </listitem>
-	  <listitem><para>Can peek inside a ZIP file and serve it
-	      up as first-class site citizens -- metadata can even be
-	      stored in the ZIP files.
-	    </para>
-	  </listitem>
-	  <listitem><para>Can serve up the contents of a dictd
-	      server as a filesystem.
-	    </para>
-	  </listitem>
-	</itemizedlist>
-	
-      <listitem><para>
-	  Modular, extensible design: you can use PyGopherd's own
-	  PYG extension format, or UMN- or Bucktooth-style
-	  executables.
-	</para>
+      <listitem>
+        <para>Virtual folder system lets you serve up
+        anything as if it were regular files and directories.
+        PyGopherd comes with the following virtual folder systems
+        built in:</para>
+        <itemizedlist>
+          <listitem><para>Can present any Unix MBOX, MMDF box, MH
+              directory, Maildir directory, or Babyl mailbox as a
+              virtual folder, the contents of which are the
+              messages in the mailbox.
+            </para>
+          </listitem>
+          <listitem><para>Can use a configurable separator to
+              split a file into multiple parts, the first line of each
+              becoming the name for the virtual folder.</para>
+          </listitem>
+          <listitem><para>Can peek inside a ZIP file and serve it
+              up as first-class site citizens -- metadata can even be
+              stored in the ZIP files.
+            </para>
+          </listitem>
+          <listitem><para>Can serve up the contents of a dictd
+              server as a filesystem.
+            </para>
+          </listitem>
+        </itemizedlist>
       </listitem>
       
-      <listitem><para>
-	  Runs on any platform supported by Python 2.2, 2.3, or 2.4.
-	  This includes virtually every past and current flavor of
-	  Unix (Linux, *BSD, Solaris, SunOS), Windows, MacOS 9.x
-	  and X, and more.  Some features may not be available on
-	  non-Unix platforms.
-	</para>
+      <listitem>
+        <para>
+        Modular, extensible design: you can use PyGopherd's own
+        PYG extension format, or UMN- or Bucktooth-style
+        executables.
+        </para>
       </listitem>
       
-      <listitem><para>Runs on any platform supported by Java 1.1
-	  via the Jython Python implementation.</para>
+      <listitem>
+        <para>
+        Runs on any platform supported by Python 2.2, 2.3, or 2.4.
+        This includes virtually every past and current flavor of
+        Unix (Linux, *BSD, Solaris, SunOS), Windows, MacOS 9.x
+        and X, and more.  Some features may not be available on
+        non-Unix platforms.
+        </para>
       </listitem>
       
-      <listitem><para>Tunable server types via configuration
-	  directive -- forking or threading.</para>
+      <listitem>
+        <para>Runs on any platform supported by Java 1.1
+        via the Jython Python implementation.</para>
       </listitem>
       
-      <listitem><para>Secure design with support for chrooted execution.</para>
+      <listitem>
+        <para>Tunable server types via configuration
+        directive -- forking or threading.</para>
       </listitem>
       
-      <listitem><para>Feature-complete, full implementations of:
-	  Gopher0 (RFC1435), Gopher+, HTTP, and WAP.</para>
+      <listitem>
+        <para>Secure design with support for chrooted execution.</para>
       </listitem>
       
-      <listitem><para>Support for automatically finding the titles
-	  of HTML documents for presentation in a directory.</para>
+      <listitem>
+        <para>Feature-complete, full implementations of:
+        Gopher0 (RFC1435), Gopher+, HTTP, and WAP.</para>
       </listitem>
       
-      <listitem><para>Versatile configuration file format is both
-	  extensible and nicely complementary of the module system.</para>
+      <listitem>
+        <para>Support for automatically finding the titles
+        of HTML documents for presentation in a directory.</para>
       </listitem>
       
-      <listitem><para>Protocol-independent, handler-dependent
-	  caching.  This increases performance by letting handlers
-	  cache dynamically-generated information -- currently used by
-	  the directory handlers.  This can improve performance of
-	  directories by several orders of magnitude.  Because this is
-	  a handler cache only, all protocols share the single
-	  cache.  Since the processing time for the protocols is
-	  negligible, this works out very well.</para>
+      <listitem>
+        <para>Versatile configuration file format is both
+        extensible and nicely complementary of the module system.</para>
       </listitem>
       
-      <listitem><para>Autosensing of MIME types and gopher0 item
-	  types.  Both are completely configurable.  MIME type
-	  detection is done using a standard mime.types file, and
-	  gopher0 types are calculated by using a configurable
-	  regexp-based MIME-to-gophertype map.</para>
+      <listitem>
+        <para>Protocol-independent, handler-dependent
+        caching.  This increases performance by letting handlers
+        cache dynamically-generated information -- currently used by
+        the directory handlers.  This can improve performance of
+        directories by several orders of magnitude.  Because this is
+        a handler cache only, all protocols share the single
+        cache.  Since the processing time for the protocols is
+        negligible, this works out very well.</para>
       </listitem>
       
-      <listitem><para>Heavy support of regular expressions in configuration.</para>
+      <listitem>
+        <para>Autosensing of MIME types and gopher0 item
+        types.  Both are completely configurable.  MIME type
+        detection is done using a standard mime.types file, and
+        gopher0 types are calculated by using a configurable
+        regexp-based MIME-to-gophertype map.</para>
       </listitem>
       
-      <listitem><para>ProtocolMultiplexer and HandlerMultiplexer
-	  let you choose only those protocols and handlers that you
-	  wish your server to support and the order in which they are
-	  tried when a request comes in.
-	</para>
+      <listitem>
+        <para>Heavy support of regular expressions in configuration.</para>
       </listitem>
       
-      <listitem><para>Full logging via syslog.</para>
-	  </listitem>
+      <listitem>
+        <para>ProtocolMultiplexer and HandlerMultiplexer
+        let you choose only those protocols and handlers that you
+        wish your server to support and the order in which they are
+        tried when a request comes in.
+        </para>
+      </listitem>
+      
+      <listitem>
+        <para>Full logging via syslog.</para>
+      </listitem>
     </itemizedlist>
   </sect1>
     
@@ -218,7 +237,7 @@
       Download the tar.gz version of the package from the website.  Make
       sure you have Python 3.7 or above installed; if not, download and
       install it from <ulink
-	url="http://www.python.org/"></ulink>.  Then run these
+    url="http://www.python.org/"></ulink>.  Then run these
       commands:
     </para>
     
@@ -248,7 +267,7 @@
       Download the tar.gz version of the package from the website.  Make
       sure you have Python 2.2 or above installed; if now, download and
       install it from <ulink
-	url="http://www.python.org/"></ulink>.  Then run these
+    url="http://www.python.org/"></ulink>.  Then run these
       commands:
     </para>
     <programlisting>
@@ -268,8 +287,8 @@
       </listitem>
       
       <listitem><para>Set <property>port</property> to a number
-	  greater than 1024.</para>
-	  </listitem>
+      greater than 1024.</para>
+      </listitem>
     </itemizedlist>
     <para>
       When you want to run &PyGopherd;, you will issue the
@@ -277,6 +296,66 @@
       <command>PYTHONPATH=. bin/pygopherd</command>.  There is no
       installation step necessary.
     </para>
+  </sect1>
+  <sect1 id="installation.docker">
+    <title>Docker Installation</title>
+    <para>
+      There are a few ways to host a pygopherd server using Docker. Using GitHub Actions and the GHCR, a prebuilt Docker image is available.
+    </para>
+    <itemizedlist>
+      <listitem><para>Docker Run</para></listitem>
+      <listitem><para>Docker Compose</para></listitem>
+      <listitem><para>Unraid User Templates</para></listitem>
+    </itemizedlist>
+    <sect2 id="installation.docker.run">
+      <para>
+        Using any up-to-date version of Docker, you can run PyGopherd with:
+      </para>
+      <programlisting>
+        docker run -d -p 70:70 -v /path/to/your/gopher/files:/app/gopher --name pygopherd pygopherd
+      </programlisting>
+      <para>
+        This will run the pygopherd server with the default configuration file, generating it. Gopherfiles are served from the /app/gopher directory.
+      </para>
+      <para>
+        If you want to use a custom configuration file (highly recommended!!!), you can add the following:
+      </para>
+      <programlisting>
+        docker run -d -p 70:70 -v /path/to/your/pygopherd.conf:/app/pygopherd.conf -v /path/to/your/gopher/files:/app/gopher --name pygopherd pygopherd
+      </programlisting>
+    </sect2>
+    <sect2 id="installation.docker.compose">
+      <para>
+        Here is an example docker-compose file that you can use:
+      </para>
+      <programlisting>
+version: '3'
+services:
+  pygopherd:
+    image: ghcr.io/cmd644/pygopherd:latest
+    container_name: pygopherd
+    ports:
+      - "70:70"
+    volumes:
+      - /path/to/your/pygopherd.conf:/app/pygopherd.conf
+      - /path/to/your/gopher/files:/app/gopher
+    restart: unless-stopped
+      </programlisting>
+      <para>
+        Then use:
+      </para>
+      <programlisting>
+        docker compose up -d
+      </programlisting>
+      <para>
+        which will pull the image from the prebuilt images and run using the compose file.
+      </para>
+    </sect2>
+    <sect2 id="installation.docker.unraid">
+      <para>
+        Search for the "pygopherd" user template in Unraid's User Templates, and configure as necessary.
+      </para>
+    </sect2>
   </sect1>
 </chapter>
 
@@ -362,10 +441,10 @@
     </para>
     <cmdsynopsis>
       <arg choice="Plain"><replaceable>full line of informational
-	  text</replaceable></arg>
+      text</replaceable></arg>
     </cmdsynopsis>
     <cmdsynopsis>
-      <arg choice="Plain"><replaceable>gophertypeDESCRIPTION</replaceable></arg><arg>\t<replaceable>selector</replaceable><arg>\t<replaceable>host</replaceable><arg>\t<replaceable>port</replaceable></arg></arg></arg>
+      <arg choice="Plain"><replaceable>gophertypeDESCRIPTION</replaceable></arg><arg>\t<replaceable>selector</replaceable></arg><arg>\t<replaceable>host</replaceable></arg><arg>\t<replaceable>port</replaceable></arg>
     </cmdsynopsis>
     <para>
       Note: spaces shown above are for clarity only and should
@@ -397,31 +476,31 @@
     </para>
     <variablelist>
       <varlistentry><term><replaceable>selector</replaceable></term>
-	<listitem><para>The <property>selector</property> is
-	    the name of the file on the server.  If it begins
-	    with a slash, it is an absolute path; otherwise,
-	    it is interpreted relative to the directory that
-	    the gophermap file is in.  If no selector is
-	    specified, the description is also used as the
-	    selector.
-	  </para>
-	</listitem>
+    <listitem><para>The <property>selector</property> is
+        the name of the file on the server.  If it begins
+        with a slash, it is an absolute path; otherwise,
+        it is interpreted relative to the directory that
+        the gophermap file is in.  If no selector is
+        specified, the description is also used as the
+        selector.
+      </para>
+    </listitem>
       </varlistentry>
       <varlistentry><term><replaceable>host</replaceable></term>
-	    <listitem><para>The <property>host</property>
-	    specifies the host on which this resource is
-	    located.  If not specified, defaults to the
-	    current server.
-	      </para>
-	</listitem>
+        <listitem><para>The <property>host</property>
+        specifies the host on which this resource is
+        located.  If not specified, defaults to the
+        current server.
+          </para>
+    </listitem>
       </varlistentry>
       <varlistentry><term><replaceable>port</replaceable></term>
-	<listitem><para>The <property>port</property>
-	    specifies the port on which the resource is
-	    located.  If not specified, defaults to the port
-	    the current server is listening on.
-	  </para>
-	</listitem>
+    <listitem><para>The <property>port</property>
+        specifies the port on which the resource is
+        located.  If not specified, defaults to the port
+        the current server is listening on.
+      </para>
+    </listitem>
       </varlistentry>
     </variablelist>
     <para>
@@ -491,10 +570,10 @@
       There are four mailbox handlers:
     </para>
     <itemizedlist>
-      <listitem><para>mbox.MaildirFolderHandler</></>
-      <listitem><para>mbox.MaildirMessageHandler</></>
-      <listitem><para>mbox.MBoxMessageHandler</></>
-      <listitem><para>mbox.MBoxFolderHandler</></>
+      <listitem><para>mbox.MaildirFolderHandler</para></listitem>
+      <listitem><para>mbox.MaildirMessageHandler</para></listitem>
+      <listitem><para>mbox.MBoxMessageHandler</para></listitem>
+      <listitem><para>mbox.MBoxFolderHandler</para></listitem>
     </itemizedlist>
     <para>
       These four handlers provide a unique "virtual folder"
@@ -513,7 +592,7 @@
     <para>
       The different handlers are for traditional Unix mbox
       mailboxes (all messages in a single file) and new
-      qmail-stype Maildir mailboxes.  You can enable only the
+      qmail-style Maildir mailboxes.  You can enable only the
       two handlers for the specific mailbox type that you use,
       if desired.
     </para>
@@ -564,7 +643,7 @@
   </sect1>
 
   <sect1 id="handlers.exechandler">
-    <title>scriptexec.ExecHandler</>
+    <title>scriptexec.ExecHandler</title>
     <para>
       This handler implements "old-style" script execution;
       that is, executing arbitrary programs and piping the
@@ -585,61 +664,61 @@
     </para>
     <variablelist>
       <varlistentry>
-	<term>SERVER_NAME</term>
-	<listitem><para>The name of this server as defined in
-	    the configuration file or detected from the
-	    operating system.</para>
-	</listitem>
+    <term>SERVER_NAME</term>
+    <listitem><para>The name of this server as defined in
+        the configuration file or detected from the
+        operating system.</para>
+    </listitem>
       </varlistentry>
       
       <varlistentry>
-	<term>SERVER_PORT</term>
-	<listitem><para>The port this server is listening on.</para>
-	</listitem>
+    <term>SERVER_PORT</term>
+    <listitem><para>The port this server is listening on.</para>
+    </listitem>
       </varlistentry>
       
       <varlistentry>
-	<term>REMOTE_ADDR</term>
-	<listitem><para>The IP address of the client.</para>
-	</listitem>
+    <term>REMOTE_ADDR</term>
+    <listitem><para>The IP address of the client.</para>
+    </listitem>
       </varlistentry>
 
       <varlistentry>
-	<term>REMOTE_PORT</term>
-	<listitem><para>The port number of the client.</para>
-	</listitem>
+    <term>REMOTE_PORT</term>
+    <listitem><para>The port number of the client.</para>
+    </listitem>
       </varlistentry>
       
       <varlistentry>
-	<term>REMOTE_HOST</term>
-	<listitem><para>The same value as <property>REMOTE_ADDR</property></para>
-	</listitem>
+    <term>REMOTE_HOST</term>
+    <listitem><para>The same value as <property>REMOTE_ADDR</property></para>
+    </listitem>
       </varlistentry>
       
       <varlistentry>
-	<term>SELECTOR</term>
-	<listitem><para>The file that was requested; that is,
-	    the relative path to this script.  If the selector
-	    included additional parameters after a |, they
-	    will be included in this string as well.
-	  </para>
-	</listitem>
+    <term>SELECTOR</term>
+    <listitem><para>The file that was requested; that is,
+        the relative path to this script.  If the selector
+        included additional parameters after a |, they
+        will be included in this string as well.
+      </para>
+    </listitem>
       </varlistentry>
       
       <varlistentry>
-	<term>REQUEST</term>
-	<listitem><para>The "base" part of the selector; that
-	    is, the part leading up to the |.</para>
-	</listitem>
+    <term>REQUEST</term>
+    <listitem><para>The "base" part of the selector; that
+        is, the part leading up to the |.</para>
+    </listitem>
       </varlistentry>
       
       <varlistentry>
-	<term>SEARCHREQUEST</term>
-	<listitem><para>Included only if the client specified
-	    search data, this is used if the client is
-	    searching for something.
-	  </para>
-	</listitem>
+    <term>SEARCHREQUEST</term>
+    <listitem><para>Included only if the client specified
+        search data, this is used if the client is
+        searching for something.
+      </para>
+    </listitem>
       </varlistentry>
     </variablelist>
     <para>
@@ -677,22 +756,22 @@
     <sect2 id="handlers.umn.links">
       <title>Links</title>
       <para>
-	You can override the default view of a directory as
-	generated by <property>dir.DirHandler</property> by
-	creating what are known as <emphasis>Links</emphasis> in
-	the data tree.
+    You can override the default view of a directory as
+    generated by <property>dir.DirHandler</property> by
+    creating what are known as <emphasis>Links</emphasis> in
+    the data tree.
       </para>
       <para>
-	The ability to make links to other hosts is how gopher
-	distributes itself among multiple hosts.  There are two
-	different ways to make a link.  The first and simplest is
-	to create a link file that contains the data needed by the
-	server.  By default all files in the gopher data directory
-	starting with a period are taken to be link files.  A link
-	file can contain multiple links.  To define a link you
-	need to put five lines in a link file that define the
-	needed characteristics for the document.  Here is an
-	example of a link.
+    The ability to make links to other hosts is how gopher
+    distributes itself among multiple hosts.  There are two
+    different ways to make a link.  The first and simplest is
+    to create a link file that contains the data needed by the
+    server.  By default all files in the gopher data directory
+    starting with a period are taken to be link files.  A link
+    file can contain multiple links.  To define a link you
+    need to put five lines in a link file that define the
+    needed characteristics for the document.  Here is an
+    example of a link.
       </para>
       <programlisting>
 Name=Cheese Ball Recipes
@@ -704,57 +783,57 @@ Host=zippy.micro.umn.edu
       </programlisting>
 
       <para>
-	The Name= line is what the user will see when cruising
-	through the database.  In this case the name is "Cheese
-	Ball Recipes".  The "Type=" defines what kind of document
-	this object is.  For a list of all defined types, see
-	Gopher Item Types below.  For Gopher+ and HTTP, a MIME
-	type is also used, which is determined automatically based
-	on the type you specify.
+    The Name= line is what the user will see when cruising
+    through the database.  In this case the name is "Cheese
+    Ball Recipes".  The "Type=" defines what kind of document
+    this object is.  For a list of all defined types, see
+    Gopher Item Types below.  For Gopher+ and HTTP, a MIME
+    type is also used, which is determined automatically based
+    on the type you specify.
       </para>
       
       <para>
-	The "Path=" line contains the selector string that the
-	client will use to retrieve the actual document.  The
-	Numb= specifies that this entry should be presented first
-	in the directory list (instead of being alphabetized).
-	The "Numb=" line is optional.  If it is present it cannot
-	be the last line of the link.  The "Host=" and "Port="
-	lines specify a fully qualified domain name (FQDN) and a
-	port respectively.  You may substitute a plus '+' for
-	these two parameters if you wish.  The server will insert
-	the current hostname and the current port when it sees a
-	plus in either of these two fields.
+    The "Path=" line contains the selector string that the
+    client will use to retrieve the actual document.  The
+    Numb= specifies that this entry should be presented first
+    in the directory list (instead of being alphabetized).
+    The "Numb=" line is optional.  If it is present it cannot
+    be the last line of the link.  The "Host=" and "Port="
+    lines specify a fully qualified domain name (FQDN) and a
+    port respectively.  You may substitute a plus '+' for
+    these two parameters if you wish.  The server will insert
+    the current hostname and the current port when it sees a
+    plus in either of these two fields.
       </para>
       
       <para>An easy way to retrieve links is to use the Curses
-	Gopher Client.  By pressing '=' You can get information
-	suitable for inclusion in a link file.
+    Gopher Client.  By pressing '=' You can get information
+    suitable for inclusion in a link file.
       </para>
     </sect2>
       
     <sect2 id="handlers.umn.overriding">
       <title>Overriding Defaults</title>
       <para>
-	The server looks for a directory called
-	<filename>.cap</filename> when parsing a directory.  The
-	server then checks to see if the <filename>.cap</filename>
-	directory contains a file with the same name as the file
-	it's parsing.  If this file exists then the server will
-	open it for reading.  The server parses this file just
-	like a link file.  However, instead of making a new
-	object, the parameters inside the
-	<filename>.cap/</filename> file are used to override any
-	of the server supplied default values.
+    The server looks for a directory called
+    <filename>.cap</filename> when parsing a directory.  The
+    server then checks to see if the <filename>.cap</filename>
+    directory contains a file with the same name as the file
+    it's parsing.  If this file exists then the server will
+    open it for reading.  The server parses this file just
+    like a link file.  However, instead of making a new
+    object, the parameters inside the
+    <filename>.cap/</filename> file are used to override any
+    of the server supplied default values.
       </para>
       
       <para>
-	For instance, say you wanted to change the Title of a text
-	file for gopher, but don't want to change the filename.
-	You also don't want it alphabetized, instead you want it
-	second in the directory listing.  You could make a
-	set-aside file in the <filename>.cap</> directory with the same
-	filename that contained the following lines:
+    For instance, say you wanted to change the Title of a text
+    file for gopher, but don't want to change the filename.
+    You also don't want it alphabetized, instead you want it
+    second in the directory listing.  You could make a
+    set-aside file in the <filename>.cap</filename> directory with the same
+    filename that contained the following lines:
       </para>
       
       <programlisting>
@@ -763,13 +842,13 @@ Numb=2
       </programlisting>
 
       <para>
-	An alternative to <filename>.cap</filename> files are
-	extended link files.  They work just the same as the files
-	described in Links above, but have a somewhat abbreviated
-	format.  As an example, if the name of the file was
-	<filename>file-to-change</filename>, then you could create
-	a file called <filename>.names</filename> with the
-	following contents:
+    An alternative to <filename>.cap</filename> files are
+    extended link files.  They work just the same as the files
+    described in Links above, but have a somewhat abbreviated
+    format.  As an example, if the name of the file was
+    <filename>file-to-change</filename>, then you could create
+    a file called <filename>.names</filename> with the
+    following contents:
       </para>
 
       <programlisting>
@@ -782,8 +861,8 @@ Numb=2
     <sect2 id="handlers.umn.cool">
       <title>Adding Cool Links</title>
       <para>
-	One cool thing you can do with .Links is to add neato
-	services to your gopher server.  Adding a link like this:
+    One cool thing you can do with .Links is to add neato
+    services to your gopher server.  Adding a link like this:
       </para>
       
       <programlisting>
@@ -800,12 +879,12 @@ Host=+
 Port=+
       </programlisting>
       <para>
-	Will allow you to link in any FTP or Web site to your
-	gopher.  (See url.URLHandler for more details.)
+    Will allow you to link in any FTP or Web site to your
+    gopher.  (See url.URLHandler for more details.)
       </para>
       
       <para>
-	You can easily add a finger site to your gopher server thusly:
+    You can easily add a finger site to your gopher server thusly:
       </para>
       
       <programlisting>
@@ -820,9 +899,9 @@ Port=79
     <sect2 id="handlers.umn.hiding">
       <title>Hiding an Entry</title>
       <para>
-	This kind of trick may be necessary in some cases,
-	and thus for
-	object "fred", the overriding .names file entry would be:
+    This kind of trick may be necessary in some cases,
+    and thus for
+    object "fred", the overriding .names file entry would be:
       </para>
       
       <programlisting>
@@ -831,34 +910,34 @@ Path=./fred
       </programlisting>
 
       <para>
-	by overriding default type to be "X".  This
-	may be useful, when for some reason there are
-	symlinks (or whatever) in the directory at which
-	&PyGopherd; looks, and those entries are not desired to
-	be shown at all.
+    by overriding default type to be "X".  This
+    may be useful, when for some reason there are
+    symlinks (or whatever) in the directory at which
+    &PyGopherd; looks, and those entries are not desired to
+    be shown at all.
       </para>
     </sect2>
 
     <sect2 id="handlers.umn.abstracts">
       <title>Abstracts and Info</title>
       <para>
-	Many modern gopher server maintainers like to intersperse
-	gopher directory listings with other information -- often,
-	additional information about the contents of files in the
-	directory.  The gophermap system provides one way to do
-	that, and abstracts used with UMN gopher directories
-	provides another.
+    Many modern gopher server maintainers like to intersperse
+    gopher directory listings with other information -- often,
+    additional information about the contents of files in the
+    directory.  The gophermap system provides one way to do
+    that, and abstracts used with UMN gopher directories
+    provides another.
       </para>
       <para>
-	Subject to the <property>abstract_headers</> and
-	<property>abstract_entries</property> configuration file
-	options, this feature allows you to define that extra
-	information.  You can do that by simply creating a file
-	named <filename>filename.abstract</filename> right
-	alongside the regular file in your directory.  The file
-	will be interpreted as the abstract.  For a directory,
-	create a file named <filename>.abstract</filename> in the
-	directory.  Simple as that!
+    Subject to the <property>abstract_headers</property> and
+    <property>abstract_entries</property> configuration file
+    options, this feature allows you to define that extra
+    information.  You can do that by simply creating a file
+    named <filename>filename.abstract</filename> right
+    alongside the regular file in your directory.  The file
+    will be interpreted as the abstract.  For a directory,
+    create a file named <filename>.abstract</filename> in the
+    directory.  Simple as that!
       </para>
     </sect2>
   </sect1>
@@ -869,8 +948,8 @@ Path=./fred
       &PyGopherd; provides ways for you to link to pages outside
       Gopherspace -- that is, web pages, FTP sites, and the like.
       This is accomplished according to the <ulink
-	url="http://lists.complete.org/gopher@complete.org/2002/02/msg00033.html.gz">Links
-	to URL</ulink> specification (see Conforming To below for
+    url="http://lists.complete.org/gopher@complete.org/2002/02/msg00033.html.gz">Links
+    to URL</ulink> specification (see Conforming To below for
       details).  In order to link to a URL (EXCEPT gopher URLs)
       from a menu, you create a link of type h (regardless of the
       actual type of the resource that you are linking to) in your
@@ -970,7 +1049,7 @@ Path=./fred
     
     <varlistentry><term>1</term>
       <listitem><para>Directory</para>
-	  </listitem>
+      </listitem>
     </varlistentry>
     
     <varlistentry><term>2</term>
@@ -990,16 +1069,16 @@ Path=./fred
     
     <varlistentry><term>5</term>
       <listitem><para>DOS binary archive (not implemented by
-	  &PyGopherd;; use type 9 instead)</para>
+      &PyGopherd;; use type 9 instead)</para>
       </listitem>
     </varlistentry>
     
     <varlistentry><term>6</term>
       <listitem><para>uuencoded file; not directly generated by
-	  &PyGopherd; automatically, but can be linked to
-	  manually.  Most gopher clients will handle this better
-	  as type 1.
-	</para>
+      &PyGopherd; automatically, but can be linked to
+      manually.  Most gopher clients will handle this better
+      as type 1.
+    </para>
       </listitem>
     </varlistentry>
 
@@ -1049,8 +1128,8 @@ Path=./fred
     </varlistentry>
 
     <varlistentry><term>i</term> <listitem><para>Informational
-	  text included in a directory that is displayed but does not
-	  link to any actual file.</para>
+      text included in a directory that is displayed but does not
+      link to any actual file.</para>
       </listitem>
     </varlistentry>
 
@@ -1070,11 +1149,11 @@ Path=./fred
     </varlistentry>
 
     <varlistentry><term>X</term><term>-</term> <listitem><para>
-	  UMN-specific -- signifies that this entry should not be
-	  displayed in a directory entry, but may be accessed via a
-	  direct link.  This value is never transmitted in any Gopher
-	  protocol.
-	</para>
+      UMN-specific -- signifies that this entry should not be
+      displayed in a directory entry, but may be accessed via a
+      direct link.  This value is never transmitted in any Gopher
+      protocol.
+    </para>
       </listitem>
     </varlistentry>
   </variablelist>

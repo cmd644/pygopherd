@@ -1,4 +1,4 @@
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V4.1//EN" "/usr/share/xml/docbook/schema/dtd/4.1/docbookx.dtd" [
   <!ENTITY PyGopherd "<application>PyGopherd</application>">
   <!ENTITY quickstart SYSTEM "quickstart.sgml">
   <!ENTITY maindoc SYSTEM "pygopherd.sgml">
@@ -6,7 +6,7 @@
 ]>
 <book id="pygopherd">
   <bookinfo>
-    <title>PyGopherd Manual</>
+    <title>PyGopherd Manual</title>
   </bookinfo>
 
   &maindoc;
