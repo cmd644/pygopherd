@@ -18,6 +18,6 @@ RUN chown -R 99:100 /app
 
 USER pygopherduser
 
-EXPOSE 70
+EXPOSE 70 1965
 
 CMD ["pygopherd", "/app/pygopherd.conf"]
