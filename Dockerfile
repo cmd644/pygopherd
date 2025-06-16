@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -m pygopherduser
+RUN useradd -m pygopherduser -u 99 -g 100
 
 WORKDIR /app
 
