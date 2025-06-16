@@ -14,7 +14,7 @@ COPY /conf/pygopherd-docker.conf /app/pygopherd.conf
 
 RUN python3 -m pip install .
 
-RUN chown -R pygopherduser:pygopherduser /app
+RUN chown -R 99:100 /app
 
 USER pygopherduser
 
