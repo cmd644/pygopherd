@@ -76,6 +76,7 @@ services:
       - /path/to/your/gopher/files:/app/gopher
     restart: unless-stopped```
 Then use: `docker compose up -d` which will pull the image from the prebuilt images and run using the compose file.
+```
 
 #### Unraid Docker Installation
 Search for the "pygopherd" user template in Unraid's User Templates, and configure as necessary.
